@@ -259,7 +259,7 @@ DEPENDENCIES
   rails (~> 7.1.2)
   redis (~> 5.0)
   selenium-webdriver
-  sentry-rails
+  sentry-rails (~> 5.15)
   sentry-ruby (~> 5.15)
   sprockets-rails
   sqlite3 (~> 1.4)
