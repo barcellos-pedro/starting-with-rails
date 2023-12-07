@@ -1,0 +1,15 @@
+<% unless comment.archived? %>
+  <p>
+    <strong style="margin-right: .5em">
+      <%= comment.commenter %>
+    </strong>
+
+    <%= link_to "Delete", [comment.article, comment], data: {
+      turbo_method: :delete,
+      turbo_confirm: "Are you sure?"
+    } %>
+
+    <br>
+    <%= comment.body %>
+  </p>
+<% end %>

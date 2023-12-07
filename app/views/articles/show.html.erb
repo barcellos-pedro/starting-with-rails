@@ -1,0 +1,23 @@
+<div style="margin-top: 1em">
+  <%= link_to "Home", root_path %>
+</div>
+
+<h1><%= @article.title %></h1>
+
+<p><%= @article.body %></p>
+
+<div style="display: flex; gap: 1em; margin-bottom: 1em">
+  <%= link_to "Edit", edit_article_path(@article) %>
+
+  <%= link_to "Delete", article_path(@article), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+  } %>
+</div>
+
+
+<h2>Comments</h2>
+<%= render @article.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
