@@ -7,6 +7,13 @@ app = "barcellos-pedro-rails-blog"
 primary_region = "gru"
 console_command = "/rails/bin/rails console"
 
+[env]
+  DATABASE_URL = "sqlite3:///mnt/volume/production.sqlite3"
+
+[mounts]
+  source = "storage/production.sqlite3"
+  destination = "/mnt/volume"
+
 [build]
 
 [deploy]
