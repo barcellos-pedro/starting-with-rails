@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for barcellos-pedro-rails-blog on 2023-12-07T20:03:55-03:00
+# fly.toml app configuration file generated for barcellos-pedro-rails-blog on 2023-12-08T12:01:08-03:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -7,14 +7,14 @@ app = "barcellos-pedro-rails-blog"
 primary_region = "gru"
 console_command = "/rails/bin/rails console"
 
+[build]
+
 [env]
   DATABASE_URL = "sqlite3:///mnt/volume/production.sqlite3"
 
 [mounts]
-  source = "storage/production.sqlite3"
+  source = "pg_data"
   destination = "/mnt/volume"
-
-[build]
 
 [deploy]
   release_command = "./bin/rails db:prepare"
